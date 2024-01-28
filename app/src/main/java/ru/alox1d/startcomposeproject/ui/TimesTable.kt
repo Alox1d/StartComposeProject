@@ -1,4 +1,4 @@
-package ru.alox1d.startcomposeproject
+package ru.alox1d.startcomposeproject.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
