@@ -3,42 +3,13 @@ package ru.alox1d.startcomposeproject
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.key.Key.Companion.G
-import androidx.compose.ui.tooling.preview.Preview
-import ru.alox1d.startcomposeproject.ui.theme.StartComposeProjectTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column {
-                Greeting("Android")
-                UserInfo(name = "Alexander", age = 26)
-            }
+            TimesTable()
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    val a = 5
-    val sencondName = "Alexander"
-    Text(
-        text = "Hello $name! and $sencondName",
-        modifier = modifier
-    )
-}
-
-@Composable
-fun UserInfo(name: String, age: Int) {
-    Text(
-        text = "Hello $name! with $age age",
-    )
-}
