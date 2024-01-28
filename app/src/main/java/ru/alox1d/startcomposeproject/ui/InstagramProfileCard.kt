@@ -13,25 +13,28 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ru.alox1d.startcomposeproject.ui.theme.StartComposeProjectTheme
 
-@Preview
 @Composable
 fun InstagramProfileCard() {
     Card(
+        modifier = Modifier
+            .padding(8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.background
         ),
         shape = RoundedCornerShape(
             topStart = 4.dp,
             topEnd = 4.dp
         ),
-        border = BorderStroke(1.dp, color = Color.Black),
+        border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.onBackground),
     ) {
         Row(
             modifier = Modifier
@@ -75,5 +78,25 @@ private fun TwoBoxes() {
         ) {
 
         }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewCardLight() {
+    StartComposeProjectTheme(
+        darkTheme = false
+    ) {
+        InstagramProfileCard()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewCardDark() {
+    StartComposeProjectTheme(
+        darkTheme = true
+    ) {
+        InstagramProfileCard()
     }
 }
