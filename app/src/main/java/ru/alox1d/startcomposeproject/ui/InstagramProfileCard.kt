@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -44,25 +45,42 @@ fun InstagramProfileCard() {
         ),
         border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.onBackground),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.icons8_instagram),
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
                 modifier = Modifier
-                    .clip(CircleShape)
-                    .background(color = Color.White)
-                    .padding(8.dp)
-                    .size(60.dp),
-                contentDescription = null
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.icons8_instagram),
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .background(color = Color.White)
+                        .padding(8.dp)
+                        .size(60.dp),
+                    contentDescription = null
+                )
+                UserStatistics(title = "Posts", "6,950")
+                UserStatistics(title = "Followers", "436M")
+                UserStatistics(title = "Following", "76")
+            }
+            Text(
+                text = "Instagram",
+                fontSize = 32.sp,
+                fontFamily = FontFamily.Cursive,
             )
-            UserStatistics(title = "Posts", "6,950")
-            UserStatistics(title = "Followers", "436M")
-            UserStatistics(title = "Following", "76")
+            Text(
+                text = "#Alox1d",
+                fontSize = 14.sp,
+            )
+            Text(
+                text = "www.roskomnadzored.com/emotional_health",
+                fontSize = 14.sp,
+            )
+            Button(onClick = {}) {
+                Text(text = "Follow")
+            }
         }
     }
 }
