@@ -20,7 +20,7 @@ fun ColumnScope.TestText(count: Int, text: String) {
 
 @Preview
 @Composable
-fun PreviewText() {
+private fun PreviewText() {
     Column(Modifier.fillMaxSize()) {
         TestText(text = "Text", count = 5)
     }
