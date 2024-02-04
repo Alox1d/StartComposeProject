@@ -50,7 +50,7 @@ fun Test(viewModel: MainViewModel) {
             val models = viewModel.models.observeAsState(listOf())
 
             LazyColumn {
-                items(models.value) { model ->
+                items(models.value, key = { it.id }) { model ->
                     val dismissState = rememberDismissState()
 
                     if (dismissState.isDismissed(DismissDirection.EndToStart)) {
