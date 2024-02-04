@@ -1,4 +1,4 @@
-package ru.alox1d.startcomposeproject.ui
+package ru.alox1d.startcomposeproject.ui.testing
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text

@@ -1,4 +1,4 @@
-package ru.alox1d.startcomposeproject.ui
+package ru.alox1d.startcomposeproject.ui.testing
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons

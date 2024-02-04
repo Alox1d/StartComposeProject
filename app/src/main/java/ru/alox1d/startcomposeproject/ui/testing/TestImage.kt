@@ -1,4 +1,4 @@
-package ru.alox1d.startcomposeproject.ui
+package ru.alox1d.startcomposeproject.ui.testing
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.shape.CircleShape
