@@ -20,6 +20,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -45,7 +46,7 @@ fun InstagramProfileCard(
 ) {
     Log.d("RECOMPOSITION", "InstagramProfileCard")
 
-    val isFollowed by viewModel.isFollowing.observeAsState(false)
+    val isFollowed = viewModel.isFollowing.observeAsState(false)
 
     // Delegation example
     var a: Int by remember {
@@ -114,7 +115,7 @@ fun InstagramProfileCard(
  */
 @Composable
 private fun FollowButton(
-    isFollowed: Boolean,
+    isFollowed: State<Boolean>,
     clickListener: () -> Unit
 ) {
     Log.d("RECOMPOSITION", "FollowButton")
@@ -122,7 +123,7 @@ private fun FollowButton(
     Button(
         onClick = clickListener,
         colors = ButtonDefaults.buttonColors(
-            containerColor = if (isFollowed) {
+            containerColor = if (isFollowed.value) {
                 MaterialTheme.colorScheme.primary.copy(
                     alpha = 0.5f
                 )
@@ -131,7 +132,7 @@ private fun FollowButton(
             }
         )
     ) {
-        val text = if (isFollowed) "Unfollow" else "Follow"
+        val text = if (isFollowed.value) "Unfollow" else "Follow"
         Text(text = text)
     }
 }
